@@ -13,10 +13,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    'https://cyber-seven-phi.vercel.app', // Your frontend URL
-    'http://localhost:3000', // Local development
-  ],
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: [
     'Origin', 
@@ -26,6 +23,7 @@ app.use(cors({
     'Authorization'
   ]
 }));
+
 app.use(express.json());
 
 // Connect to MongoDB
